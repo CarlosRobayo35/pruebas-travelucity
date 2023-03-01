@@ -22,7 +22,7 @@ public class CerrarStepDefinitions {
     public void tiene_tickets_para(Actor actor, String destino, String clave) {
 
         actor.attemptsTo(IngresarPagina.simple(destino, clave));
-        OnStage.theActorInTheSpotlight().attemptsTo(
+        actor.attemptsTo(
                 WaitUntil.the(SELECCIONAR_CHECK, isVisible()).forNoMoreThan(Duration.ofSeconds(5)));
 
     }
